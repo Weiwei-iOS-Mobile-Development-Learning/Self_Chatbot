@@ -15,6 +15,7 @@ class FirstViewController: UIViewController {
     @IBOutlet var recieveMessage: UILabel!
     
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,6 +29,13 @@ class FirstViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func backTo(segue: UIStoryboardSegue){
+        let src = segue.source as! SecondViewController
+        recieveMessage.text = src.sendMessage.text
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
